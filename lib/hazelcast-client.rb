@@ -9,14 +9,14 @@ module Hazelcast
     Hazelcast::Jars.all
     GEM_ROOT = File.expand_path(File.dirname(__FILE__)) unless defined?(GEM_ROOT)
 
-    attr_reader :username, :password, :host
+    attr_reader :username, :password, :hosts
 
-    def initialize(username = nil, password = nil, host = nil)
+    def initialize(username = nil, password = nil, *hosts)
       @username = username || "dev"
       @password = password || "dev-pass"
-      @host     = host || "localhost"
-      @conn_id  = self.class.connection_id @username, @password, @host
-      self.class.connect @username, @password, @host
+      @hosts    = hosts || "localhost"
+      @conn_id  = self.class.connection_id @username, @password, @hosts
+      self.class.connect @username, @password, @hosts
       client
     end
 

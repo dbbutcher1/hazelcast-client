@@ -1,5 +1,3 @@
-require 'colorize'
-
 class Java::ComHazelcastCore::EntryEvent
 
   alias_method :name, :getName
@@ -146,5 +144,3 @@ class Java::ComHazelcastClientProxy::ClientMapProxy
   end
 
 end
-
-

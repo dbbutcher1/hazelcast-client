@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'hazelcast-jars', '3.0.SNAPSHOT'
+gem 'hazelcast-jars', github: 'https://github.com/dbbutcher1/hazelcast-jars.git'
 
 group :development do
   gem 'bundler'
