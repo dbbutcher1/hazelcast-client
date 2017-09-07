@@ -16,7 +16,7 @@ module Hazelcast
       @password = password || "dev-pass"
       @hosts    = hosts || "localhost"
       @conn_id  = self.class.connection_id @username, @password, @hosts
-      self.class.connect @username, @password, @hosts
+      self.class.connect @username, @password, *@hosts
       client
     end
 
